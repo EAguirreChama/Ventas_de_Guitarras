@@ -5,13 +5,11 @@
             required: true
         }
       }) 
-    
     defineEmits(['agregar-carrito'])
 </script>
 
 <template>
     <div class="col-md-6 col-lg-4 my-4 row align-items-center">
-        
         <div class="col-4">
             <img 
             class="img-fluid" 
@@ -35,10 +33,8 @@
                 Agregar al Carrito
             </button>
         </div>
-
-    </div><!-- FIN GUITARRA -->
+    </div>
 </template>
 
 <style lang="scss" scoped>
-
 </style>
