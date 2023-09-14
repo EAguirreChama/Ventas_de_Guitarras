@@ -58,7 +58,7 @@
                                     >
                                     </td>
                                     
-                                    <td> {{ producto.nombre }} </td>
+                                    <td>{{ producto.nombre }}</td>
                                     
                                     <td class="fw-bold"> ${{ producto.precio }} </td>
                                     
@@ -102,7 +102,7 @@
                       </div>
             </div>
                 </nav>
-        </div><!--.row-->
+        </div>
             <div class="row mt-5">
                 <div class="col-md-6 text-center text-md-start pt-5">
                     <h1 class="display-2 fw-bold">Modelo {{ guitarra.nombre }}</h1>
