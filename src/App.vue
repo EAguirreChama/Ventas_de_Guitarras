@@ -1,5 +1,4 @@
 <script setup>
-
     import { ref, reactive, onMounted, watch } from "vue"
     import { db } from "./data/guitarras"
     import Guitarra from "./components/Guitarra.vue"
@@ -32,7 +31,7 @@
 
     const guardarCarrito = () => {
         localStorage.setItem("carrito", JSON.stringify(carrito.value))
-    }
+    };
 
     const agregarCarrito = (guitarra) => {
         const exiteEnCarrito = carrito.value.findIndex(producto => producto.id === guitarra.id)
@@ -43,37 +42,30 @@
             guitarra.cantidad = 1;
             carrito.value.push(guitarra);
         }
-
-    }
+    };
 
     const decrementarCantidad = (id) => {
         const index = carrito.value.findIndex(producto => producto.id === id)
         if(carrito.value[index].cantidad <= 1) return
         carrito.value[index].cantidad--
-
-    }
+    };
 
     const incrementarCantidad = (id) => {
         const index = carrito.value.findIndex(producto => producto.id === id)
         if(carrito.value[index].cantidad >= 5) return
         carrito.value[index].cantidad++
-
-    }
+    };
 
     const eliminarProducto = (id) => {
         carrito.value = carrito.value.filter(producto => producto.id !== id)
-
-    }
+    };
 
     const vaciarCarrito = () => {
         carrito.value = []
-
-    }
-
+    };
 </script>
 
 <template>
-
     <Header
         :carrito="carrito"
         :guitarra="guitarra"
@@ -96,7 +88,5 @@
                 />
             </div>
         </main>
-
     <Footer/>
-
 </template>
