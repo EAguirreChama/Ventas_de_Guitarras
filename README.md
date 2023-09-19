@@ -8,7 +8,7 @@
 
 📍 También tendrás la posibilidad de guardar en favoritos las que más te interesen y gracias a LocalStorage quedarán almacenadas en nuestro navegador.
 
-📍 **Deploy:** [Recetas de Bebidas](https://recetas-debebidas.netlify.app/)
+📍 **Deploy:** [Venta de Guitarras](https://guitarras-vuejs.netlify.app/)
 
  <br /> 
 
