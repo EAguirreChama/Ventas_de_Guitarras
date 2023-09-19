@@ -1,4 +1,4 @@
-# 🍹 **Recetas de Bebidas** 🍹
+# 🎸 **Venta de Guitarras** 🎸
 
 ## **📌 ¿De qué se trata?**
 
