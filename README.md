@@ -2,11 +2,9 @@
 
 ## **📌 ¿De qué se trata?**
 
-📍 Se trata de una página web donde podrás encontrar recetas de bebidas y las instrucciones de como prepararlas. 
+📍 Se trata de una página web donde podrás encontrar guitarras, ver precios y agregar a carrito. Es algo sencillo de lo que es una página de venta online. 
 
 📍 Consumo de una Api externa para poder traer todos los datos.
-
-📍 También tendrás la posibilidad de guardar en favoritos las que más te interesen y gracias a LocalStorage quedarán almacenadas en nuestro navegador.
 
 📍 **Deploy:** [Venta de Guitarras](https://guitarras-vuejs.netlify.app/)
 
