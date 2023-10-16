@@ -1,6 +1,8 @@
 <script setup>
     import { ref, reactive, onMounted, watch } from "vue"
     import { db } from "./data/guitarras"
+
+    // Componentes
     import Guitarra from "./components/Guitarra.vue"
     import Header from "./components/Header.vue"
     import Footer from "./components/Footer.vue"
@@ -9,9 +11,9 @@
     //     guitarras: db
     // })
 
-    const guitarras = ref([])
-    const carrito = ref([])
-    const guitarra = ref({})
+    const guitarras = ref([])  // State de Guitarras
+    const carrito = ref([])    // State de Carrito
+    const guitarra = ref({})   // State de una Guitarra
 
     watch(carrito, () => {
         guardarCarrito()

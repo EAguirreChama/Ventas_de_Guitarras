@@ -1,3 +1,5 @@
+// Lo que sería una base de datos
+
 export const db = [
     {
         id: 1,
