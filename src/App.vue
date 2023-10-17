@@ -35,6 +35,7 @@
         localStorage.setItem("carrito", JSON.stringify(carrito.value))
     };
 
+    // Función agregarCarrito para pasar como un event
     const agregarCarrito = (guitarra) => {
         const exiteEnCarrito = carrito.value.findIndex(producto => producto.id === guitarra.id)
 
@@ -86,11 +87,12 @@
 
                 <!-- Se hace la iteración del componente con v-for -->
                 <!-- Props guitarra para que vaya al componente Guitarra.vue -->
+                <!-- Event para agregar carrito  -->
                 <Guitarra
                     v-for="guitarra in guitarras" 
                     :guitarra="guitarra"
-                    :key="guitarra.id"
                     @agregar-carrito="agregarCarrito"
+                    :key="guitarra.id"
                 />
             </div>
         </main>
