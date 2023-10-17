@@ -22,10 +22,13 @@
         </div>
 
         <div class="col-8">
+            <!-- Se muestra el nombre de cada guitarra-->
             <h3 class="text-black fs-4 fw-bold text-uppercase"> {{ guitarra.nombre }} </h3>
             
+            <!-- Se muestra la descripción de cada guitarra-->
             <p> {{ guitarra.descripcion }} </p>
             
+            <!-- Se muestra el precio de cada guitarra -->
             <p class="fw-black text-primary fs-3">${{ guitarra.precio }}</p>
             
             <button 
