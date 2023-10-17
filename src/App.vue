@@ -14,7 +14,7 @@
     const guitarras = ref([])  // State de Guitarras
     const carrito = ref([])    // State de Carrito
     const guitarra = ref({})   // State de una Guitarra
-
+  
     watch(carrito, () => {
         guardarCarrito()
     }, {
@@ -82,10 +82,14 @@
             <h2 class="text-center">Nuestra Colección</h2>
 
             <div class="row mt-5">
+                <!-- Se renderiza el componente -->
+
+                <!-- Se hace la iteración del componente con v-for -->
+                <!-- Props guitarra para que vaya al componente Guitarra.vue -->
                 <Guitarra
-                    v-for="guitarra in guitarras"
-                    :key="guitarra.id"
+                    v-for="guitarra in guitarras" 
                     :guitarra="guitarra"
+                    :key="guitarra.id"
                     @agregar-carrito="agregarCarrito"
                 />
             </div>

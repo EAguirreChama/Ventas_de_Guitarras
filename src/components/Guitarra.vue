@@ -1,10 +1,13 @@
 <script setup>
+
+    // Props que viene desde App.vue
     const props = defineProps({
         guitarra: {
-            type: Object,
-            required: true
+            type: Object,   // Tipo de dato que se pasa
+            required: true  // Si es requerido
         }
       }) 
+
     defineEmits(['agregar-carrito'])
 </script>
 
