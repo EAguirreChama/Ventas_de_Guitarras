@@ -1,5 +1,5 @@
 <script setup>
-
+    // Este es el componente hijo
     // Props que viene desde App.vue
     const props = defineProps({
         guitarra: {

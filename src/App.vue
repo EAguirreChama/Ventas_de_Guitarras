@@ -1,4 +1,5 @@
 <script setup>
+    // Este es el componente padre
     import { ref, reactive, onMounted, watch } from "vue"
     import { db } from "./data/guitarras"
 
@@ -11,10 +12,26 @@
     //     guitarras: db
     // })
 
-    const guitarras = ref([])  // State de Guitarras
-    const carrito = ref([])    // State de Carrito
+    // STATES
+    const guitarras = ref([])  // State de Guitarras (aquí se encuentran todas las guitarras)
+    const carrito = ref([])    // State de Carrito de Compras (aquí se agregan las guitarras)
     const guitarra = ref({})   // State de una Guitarra
-  
+    
+    // Función agregarCarrito para pasar como un event
+    const agregarCarrito = (guitarra) => {
+        const exiteEnCarrito = carrito.value.findIndex(producto => producto.id === guitarra.id)
+        
+        if(exiteEnCarrito >= 0) {
+            carrito.value[exiteEnCarrito].cantidad++
+        } else {
+            // La cantidad con la que se inicia
+            guitarra.cantidad = 1;
+            
+            // Se agrega al state de carrito (un arreglo) la guitarra
+            carrito.value.push(guitarra);
+        }
+    };
+    
     watch(carrito, () => {
         guardarCarrito()
     }, {
@@ -35,17 +52,6 @@
         localStorage.setItem("carrito", JSON.stringify(carrito.value))
     };
 
-    // Función agregarCarrito para pasar como un event
-    const agregarCarrito = (guitarra) => {
-        const exiteEnCarrito = carrito.value.findIndex(producto => producto.id === guitarra.id)
-
-        if(exiteEnCarrito >= 0) {
-            carrito.value[exiteEnCarrito].cantidad++
-        } else {
-            guitarra.cantidad = 1;
-            carrito.value.push(guitarra);
-        }
-    };
 
     const decrementarCantidad = (id) => {
         const index = carrito.value.findIndex(producto => producto.id === id)
