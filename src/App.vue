@@ -1,12 +1,13 @@
 <script setup>
+// Me quede en el video 57
+
     // Este es el componente padre
     import { ref, reactive, onMounted, watch } from "vue"
     import { db } from "./data/guitarras"
 
-    // Componentes
-    import Guitarra from "./components/Guitarra.vue"
-    import Header from "./components/Header.vue"
-    import Footer from "./components/Footer.vue"
+    import Guitarra from "./components/Guitarra.vue" // Componente donde aparecen todas las guitarras
+    import Header from "./components/Header.vue" //  Componente donde esta el carrito
+    import Footer from "./components/Footer.vue" // Componente Footer
 
     // const state = reactive ({
     //     guitarras: db
@@ -26,7 +27,7 @@
         } else {
             // La cantidad con la que se inicia
             guitarra.cantidad = 1;
-            
+
             // Se agrega al state de carrito (un arreglo) la guitarra
             carrito.value.push(guitarra);
         }
@@ -51,7 +52,6 @@
     const guardarCarrito = () => {
         localStorage.setItem("carrito", JSON.stringify(carrito.value))
     };
-
 
     const decrementarCantidad = (id) => {
         const index = carrito.value.findIndex(producto => producto.id === id)
