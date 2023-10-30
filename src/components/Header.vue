@@ -62,13 +62,13 @@ const totalPagar = computed(() => {
                                             <td class="fw-bold"> ${{ producto.precio }} </td>
 
                                             <td class="flex align-items-start gap-4">
-                                                <button type="button" class="btn btn-dark"
-                                                    @click="$emit('decrementar-cantidad', producto.id)">
+                                                <button type="button" class="btn btn-dark" @click="$emit('decrementar-cantidad', producto.id)">
                                                     -
                                                 </button>
+
                                                 {{ producto.cantidad }}
-                                                <button type="button" class="btn btn-dark"
-                                                    @click="$emit('incrementar-cantidad', producto.id)">
+                                                
+                                                <button type="button" class="btn btn-dark" @click="$emit('incrementar-cantidad', producto.id)">
                                                     +
                                                 </button>
                                             </td>

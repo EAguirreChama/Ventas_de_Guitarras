@@ -32,6 +32,18 @@ const agregarCarrito = (guitarra) => {
     }
 }
 
+const decrementarCantidad = (id) => {
+    const index = carrito.value.findIndex(producto => producto.id === id)
+    if (carrito.value[index].cantidad <= 1) return
+    carrito.value[index].cantidad--
+};
+
+const incrementarCantidad = (id) => {
+    const index = carrito.value.findIndex(producto => producto.id === id)
+    if (carrito.value[index].cantidad >= 5) return
+    carrito.value[index].cantidad++
+};
+
 watch(carrito, () => {
     guardarCarrito()
 }, {
@@ -52,18 +64,6 @@ const guardarCarrito = () => {
     localStorage.setItem("carrito", JSON.stringify(carrito.value))
 };
 
-const decrementarCantidad = (id) => {
-    const index = carrito.value.findIndex(producto => producto.id === id)
-    if (carrito.value[index].cantidad <= 1) return
-    carrito.value[index].cantidad--
-};
-
-const incrementarCantidad = (id) => {
-    const index = carrito.value.findIndex(producto => producto.id === id)
-    if (carrito.value[index].cantidad >= 5) return
-    carrito.value[index].cantidad++
-};
-
 const eliminarProducto = (id) => {
     carrito.value = carrito.value.filter(producto => producto.id !== id)
 };
@@ -74,9 +74,15 @@ const vaciarCarrito = () => {
 </script>
 
 <template>
-    <Header :carrito="carrito" :guitarra="guitarra" @decrementar-cantidad="decrementarCantidad"
-        @incrementar-cantidad="incrementarCantidad" @agregar-carrito="agregarCarrito" @eliminar-Producto="eliminarProducto"
-        @vaciar-carrito="vaciarCarrito" />
+    <Header 
+        :carrito = "carrito" 
+        :guitarra = "guitarra" 
+        @decrementar-cantidad = "decrementarCantidad"
+        @incrementar-cantidad = "incrementarCantidad" 
+        @agregar-carrito = "agregarCarrito" 
+        @eliminar-Producto = "eliminarProducto"
+        @vaciar-carrito = "vaciarCarrito"
+    />
 
     <main class="container-xl mt-5">
         <h2 class="text-center">Nuestra Colección</h2>
