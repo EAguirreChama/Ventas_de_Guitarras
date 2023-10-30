@@ -18,6 +18,7 @@ const guitarra = ref({})   // State de una Guitarra
 
 // Función agregarCarrito para pasar como un event
 const agregarCarrito = (guitarra) => {
+    // Se verifica si una guitarra se encuentra en el carrito
     const exiteEnCarrito = carrito.value.findIndex(producto => producto.id === guitarra.id)
 
     if (exiteEnCarrito >= 0) {
@@ -29,7 +30,7 @@ const agregarCarrito = (guitarra) => {
         // Se agrega al state de carrito (un arreglo) la guitarra
         carrito.value.push(guitarra);
     }
-};
+}
 
 watch(carrito, () => {
     guardarCarrito()
