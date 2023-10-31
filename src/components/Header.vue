@@ -13,7 +13,7 @@ const props = defineProps({
     }
 })
 
-defineEmits(['decrementar-cantidad', 'incrementar-cantidad', 'agregar-carrito', 'eliminar-producto', 'vaciar-carrito'])
+defineEmits(['decrementar-cantidad', 'incrementar-cantidad', 'eliminar-producto', 'agregar-carrito', 'vaciar-carrito'])
 
 const totalPagar = computed(() => {
     // En el reduce, el primer parametro es el array, y el segundo es cada elemento
