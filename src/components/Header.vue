@@ -16,6 +16,8 @@ const props = defineProps({
 defineEmits(['decrementar-cantidad', 'incrementar-cantidad', 'agregar-carrito', 'eliminar-producto', 'vaciar-carrito'])
 
 const totalPagar = computed(() => {
+    // En el reduce, el primer parametro es el array, y el segundo es cada elemento
+    // Esta iterando sobre el carrito
     return props.carrito.reduce((total, producto) => total + (producto.cantidad * producto.precio), 0)
 })
 </script>
