@@ -64,13 +64,12 @@ const eliminarProducto = (id) => {
     carrito.value = carrito.value.filter(producto => producto.id !== id)
 };
 
-const guardarCarrito = () => {
-    localStorage.setItem("carrito", JSON.stringify(carrito.value))
-};
-
-
 const vaciarCarrito = () => {
     carrito.value = []
+};
+
+const guardarCarrito = () => {
+    localStorage.setItem("carrito", JSON.stringify(carrito.value))
 };
 </script>
 
@@ -81,8 +80,8 @@ const vaciarCarrito = () => {
         @decrementar-cantidad = "decrementarCantidad"
         @incrementar-cantidad = "incrementarCantidad" 
         @eliminar-Producto = "eliminarProducto"
-        @agregar-carrito = "agregarCarrito" 
         @vaciar-carrito = "vaciarCarrito"
+        @agregar-carrito = "agregarCarrito" 
     />
 
     <main class="container-xl mt-5">
