@@ -14,7 +14,7 @@ import Footer from "./components/Footer.vue" // Componente Footer
 // STATES
 const guitarras = ref([])  // State de Guitarras (aquí se encuentran todas las guitarras)
 const carrito = ref([])    // State de Carrito de Compras (aquí se agregan las guitarras)
-const guitarra = ref({})   // State de una Guitarra
+const guitarra = ref({})   // State de la Guitarra que se muestra
 
 // Función agregarCarrito para pasar como un event
 const agregarCarrito = (guitarra) => {
