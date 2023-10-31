@@ -68,6 +68,7 @@ const vaciarCarrito = () => {
     carrito.value = []
 };
 
+// Mantener un carrito persistente con LocalStorage
 const guardarCarrito = () => {
     localStorage.setItem("carrito", JSON.stringify(carrito.value))
 };
