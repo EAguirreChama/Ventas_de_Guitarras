@@ -47,6 +47,7 @@ const incrementarCantidad = (id) => {
 watch(carrito, () => {
     guardarCarrito()
 }, {
+    // Revisa cuando cambien
     deep: true
 })
 
